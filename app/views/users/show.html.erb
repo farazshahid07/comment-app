@@ -1,0 +1,39 @@
+<h1><%= @user.name %></h1>
+
+<%= link_to "Home", users_path %>
+<%= link_to 'Edit', edit_user_path %>
+<%= link_to 'Delete', user_path(@user), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?" } %>
+
+<h2>Posts</h2>
+<% @user.posts.each do |post| %>
+  <li>
+    <strong><%= post.title %></strong><br>
+    <%= post.body %><br>
+    <%= link_to 'Delete', user_post_path(@user,post), data: {
+        turbo_method: :delete} %><br>
+  </li>
+<%end%><br>
+
+<%= link_to 'Create Post', new_user_post_path(@user) %>
+
+<%# <%= render partial: "comments/index", locals: {commentable: @commentable} %> %>
+<%= link_to "Add Comment", new_user_post_comment_path(@commentable, @comment) %>
+
+
+
+<h2>Articles</h2>
+<% @user.articles.each do |article| %>
+  <li>
+    <strong><%= article.title %></strong><br>
+    <%= article.body %><br>
+    <%= link_to 'Delete', user_article_path(@user,article), data: {
+        turbo_method: :delete} %><br>
+  </li>
+<%end%><br>
+
+<%= link_to 'Create Article', new_user_article_path(@user) %>edw
+
+
+

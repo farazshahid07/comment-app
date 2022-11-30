@@ -1,0 +1,12 @@
+<%= form_for [@commentable, @comment] do |form| %>
+  
+  <strong><%= form.label :commentor %><br></strong>
+  <%= form.text_field :commentor %><br><br>
+  
+  <strong><%= form.label :body %><br></strong>
+  <%= form.text_area :body %><br><br>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
