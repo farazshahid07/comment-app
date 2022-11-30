@@ -6,9 +6,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
-    @commentable = @post
-    @comment = Comment.new
+    # @post = Post.find(params[:id])
+    # @commentable = @post
+    # @comment = Comment.new
   end
 
   def new
